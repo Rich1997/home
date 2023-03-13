@@ -11,7 +11,7 @@ function App() {
                 <Widget
                     is24HourFormat={false}
                     showSeconds={true}
-                    align="center"
+                    align="start"
                 />
             </div>
         </div>

@@ -91,7 +91,7 @@ const Widget = ({
     };
 
     return (
-        <div className={`p-4 flex flex-col is-y-${align}`}>
+        <div className={`p-8 pt-16 flex flex-col is-y-${align}`}>
             <div
                 className={`flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black`}
             >
@@ -109,9 +109,13 @@ const Widget = ({
             <div className="tracking-tighter font-black desktop:text-3xl laptop:text-2xl tablet:text-xl phone:text-lg">
                 {today}
             </div>
-            <div className="desktop:text-base tablet:text-sm text-xs">
-                Day of the year is {dayOfYear} | {daysLeft}{' '}
-                {daysLeft == 1 ? 'day' : 'days'} left in the year
+            <div
+                className={`flex flex-col desktop:text-base tablet:text-sm text-xs items-${align}`}
+            >
+                <div>Day of the year is {dayOfYear}</div>
+                <div>
+                    {daysLeft} {daysLeft == 1 ? 'day' : 'days'} left in the year
+                </div>
             </div>
         </div>
     );
