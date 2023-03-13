@@ -1,0 +1,75 @@
+import { Listbox, Transition } from '@headlessui/react';
+import { useEffect, useState } from 'react';
+import ExpandIcon from '../assets/icons/ExpandIcon';
+import { Theme, useTheme } from '../context/ThemeContext';
+import { themes } from '../utils/constants';
+
+const List = () => {
+    const { theme, setTheme } = useTheme();
+    const op = localStorage.getItem('homeTheme');
+    const [selected, setSelected] = useState(
+        op === 'light' ? themes[0] : themes[1]
+    );
+
+    useEffect(() => {
+        localStorage.setItem('homeTheme', theme);
+    }, [theme]);
+
+    return (
+        <Listbox value={selected} onChange={setSelected}>
+            <div className="relative w-full">
+                <Listbox.Button className="relative flex items-center justify-between gap-2 w-full cursor-pointer rounded-md b py-1 px-3 text-left d-h">
+                    <span className="truncate">{selected.option}</span>
+                    <span className="pointer-events-none pt-0.5">
+                        <ExpandIcon size={6} />
+                    </span>
+                </Listbox.Button>
+                <Transition
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <Listbox.Options className="z-30 px-1 absolute w-[163px] b mt-1 overflow-auto rounded-md py-2 default-bg">
+                        {themes.map((theme, themeIdx) => (
+                            <Listbox.Option
+                                key={themeIdx}
+                                className={({ active }) =>
+                                    `relative cursor-pointer select-none py-1 px-2 ${
+                                        active
+                                            ? 'd-h dark:bg-surface-dark bg-surface-light rounded'
+                                            : ''
+                                    }`
+                                }
+                                value={theme}
+                                onClick={() => {
+                                    setTheme(
+                                        theme.option.toLowerCase() as Theme
+                                    );
+                                }}
+                            >
+                                {({ selected }) => (
+                                    <>
+                                        <button
+                                            className={`block truncate ${
+                                                selected
+                                                    ? 'font-bold'
+                                                    : 'font-normal'
+                                            }`}
+                                        >
+                                            {theme.option
+                                                .charAt(0)
+                                                .toLocaleUpperCase() +
+                                                theme.option.slice(1)}
+                                        </button>
+                                    </>
+                                )}
+                            </Listbox.Option>
+                        ))}
+                    </Listbox.Options>
+                </Transition>
+            </div>
+        </Listbox>
+    );
+};
+
+export default List;

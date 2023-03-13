@@ -1,0 +1,83 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    height: 100%;
+    width: 100%;
+
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Base colors */
+    --primary-light: #f0f0f0;
+    --primary-dark: #101010;
+    --secondary-light: #dbdbdb;
+    --secondary-dark: #313131;
+    --tertiary-light: #8b8b8b;
+    --tertiary-dark: #6e6e6e;
+    --surface-light: #e4e4e7;
+    --surface-dark: #27272a;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: inter var;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+}
+
+.default-bg {
+    @apply dark:bg-primary-dark bg-primary-light;
+}
+
+.default-text {
+    @apply dark:text-primary-light text-primary-dark;
+}
+
+/* default-hover */
+.d-h {
+    @apply dark:hover:text-primary-light hover:text-primary-dark;
+}
+
+/* default-tertiary-text */
+.d-t-t {
+    @apply dark:text-tertiary-dark text-tertiary-light;
+}
+
+.is-center {
+    @apply justify-center;
+}
+
+.is-end {
+    @apply justify-end;
+}
+
+.is-y-center {
+    @apply items-center;
+}
+
+.is-y-end {
+    @apply items-end;
+}
+
+.b {
+    @apply border dark:border-secondary-dark border-secondary-light;
+}
