@@ -91,7 +91,7 @@ const Widget = ({
     };
 
     return (
-        <div className={`p-8 pt-16 flex flex-col is-y-${align}`}>
+        <div className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align}`}>
             <div
                 className={`flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black`}
             >

@@ -81,3 +81,11 @@ body {
 .b {
     @apply border dark:border-secondary-dark border-secondary-light;
 }
+
+.b-l {
+    @apply border-l border-t-0 dark:border-secondary-dark border-secondary-light;
+}
+
+.b-t {
+    @apply border-t border-l-0 dark:border-secondary-dark border-secondary-light;
+}

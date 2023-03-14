@@ -14,7 +14,7 @@ const Settings = () => {
                             className={`
                 ${
                     open ? '' : 'text-opacity-90'
-                } fixed top-4 right-4 rounded-full font-medium hover:text-opacity-100 focus:outline-0`}
+                } fixed laptop:top-8 top-4 laptop:right-8 right-4 rounded-full font-medium hover:text-opacity-100 focus:outline-0`}
                         >
                             <div className="flex items-center justify-center h-8 w-8 rounded-full default-bg b dark:text-tertiary-dark text-tertiary-light d-h hover:animate-spin-soft">
                                 <SettingsIcon size={24} />
@@ -29,7 +29,7 @@ const Settings = () => {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                         >
-                            <Popover.Panel className="fixed top-16 right-4 z-10">
+                            <Popover.Panel className="fixed laptop:top-20 top-16 laptop:right-8 right-4 z-10">
                                 <div className="rounded-md ml-8 overflow-hidden default-bg d-t-t b">
                                     <div className="p-4 flex flex-col gap-4 ">
                                         <div className="font-bold text-lg default-text">

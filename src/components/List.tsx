@@ -29,7 +29,7 @@ const List = () => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="z-30 px-1 absolute w-[163px] b mt-1 overflow-auto rounded-md py-2 default-bg">
+                    <Listbox.Options className="z-30 p-2 absolute w-[163px] b mt-1 overflow-auto rounded-md default-bg">
                         {themes.map((theme, themeIdx) => (
                             <Listbox.Option
                                 key={themeIdx}
