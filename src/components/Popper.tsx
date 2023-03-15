@@ -15,43 +15,43 @@ const Popper = () => {
                     <SettingsIcon size={24} />
                 </div>
             </button>
-            {isOpen ? (
-                <div className="-z-1 tablet:overflow-hidden overflow-auto default-bg d-t-t tablet:b-t b-l m-l-[-1px] tablet:h-full h-1/2 tablet:w-72 w-full fixed tablet:right-0 bottom-0">
-                    <div className="p-4 pt-8 flex flex-col gap-4 ">
-                        <div className="font-bold text-lg default-text">
-                            Settings
-                        </div>
-                        <div className="flex flex-col gap-2 items-start cursor-default">
-                            <div>Theme</div>
-                            <List />
-                        </div>
-                        <div className="flex flex-col gap-2 items-start cursor-default">
-                            <div>Font</div>
-                        </div>
+            <div
+                className={`b-t b-l -z-1 tablet:w-72 w-full tablet:overflow-hidden overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 ${
+                    isOpen ? 'fixed' : 'hidden'
+                }`}
+            >
+                <div className="p-4 pt-8 flex flex-col gap-4 ">
+                    <div className="font-bold text-lg default-text">
+                        Settings
                     </div>
-                    <div className="p-6 default-text dark:bg-surface-dark bg-surface-light">
-                        <span className="flex justify-between items-center gap-4">
-                            <span>home version 2.0</span>
-                            <div className="flex gap-4">
-                                <a
-                                    href="##"
-                                    className="transition duration-150 ease-in-out"
-                                >
-                                    {/* <GitHubIcon size={16} /> */}
-                                </a>
-                                <a
-                                    href="##"
-                                    className="transition duration-150 ease-in-out"
-                                >
-                                    {/* <LinkedinIcon size={16} /> */}
-                                </a>
-                            </div>
-                        </span>
+                    <div className="flex flex-col gap-2 items-start cursor-default">
+                        <div>Theme</div>
+                        <List />
+                    </div>
+                    <div className="flex flex-col gap-2 items-start cursor-default">
+                        <div>Font</div>
                     </div>
                 </div>
-            ) : (
-                ''
-            )}
+                <div className="p-6 default-text dark:bg-surface-dark bg-surface-light">
+                    <span className="flex justify-between items-center gap-4">
+                        <span>home version 2.0</span>
+                        <div className="flex gap-4">
+                            <a
+                                href="##"
+                                className="transition duration-150 ease-in-out"
+                            >
+                                {/* <GitHubIcon size={16} /> */}
+                            </a>
+                            <a
+                                href="##"
+                                className="transition duration-150 ease-in-out"
+                            >
+                                {/* <LinkedinIcon size={16} /> */}
+                            </a>
+                        </div>
+                    </span>
+                </div>
+            </div>
         </>
     );
 };

@@ -5,14 +5,20 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'primary-dark': 'var(--primary-dark)',
                 'primary-light': 'var(--primary-light)',
-                'secondary-dark': 'var(--secondary-dark)',
+                'primary-dark': 'var(--primary-dark)',
+
                 'secondary-light': 'var(--secondary-light)',
-                'tertiary-dark': 'var(--tertiary-dark)',
+                'secondary-dark': 'var(--secondary-dark)',
+
                 'tertiary-light': 'var(--tertiary-light)',
-                'surface-dark': 'var(--surface-dark)',
+                'tertiary-dark': 'var(--tertiary-dark)',
+
                 'surface-light': 'var(--surface-light)',
+                'surface-dark': 'var(--surface-dark)',
+
+                'primary-accent-light': 'var(--primary-accent-light)',
+                'primary-accent-dark': 'var(--primary-accent-dark)',
             },
         },
         screens: {

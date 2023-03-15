@@ -32,6 +32,8 @@
     --tertiary-dark: #6e6e6e;
     --surface-light: #e4e4e7;
     --surface-dark: #27272a;
+    --primary-accent-light: #ffdc7d;
+    --primary-accent-dark: #624f1b;
 }
 
 html,
@@ -62,6 +64,11 @@ body {
     @apply dark:text-tertiary-dark text-tertiary-light;
 }
 
+/* default-secondary-text */
+.d-s-t {
+    @apply dark:text-secondary-dark text-secondary-light;
+}
+
 .is-center {
     @apply justify-center;
 }
@@ -83,9 +90,9 @@ body {
 }
 
 .b-l {
-    @apply border-l border-t-0 dark:border-secondary-dark border-secondary-light;
+    @apply tablet:border-l dark:border-secondary-dark border-secondary-light;
 }
 
 .b-t {
-    @apply border-t border-l-0 dark:border-secondary-dark border-secondary-light;
+    @apply border-t tablet:border-t-0 dark:border-secondary-dark border-secondary-light;
 }

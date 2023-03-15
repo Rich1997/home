@@ -29,7 +29,7 @@ const List = () => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="z-30 p-2 absolute w-[163px] b mt-1 overflow-auto rounded-md default-bg">
+                    <Listbox.Options className="z-30 p-2 absolute w-full decoration-none b mt-1 overflow-auto rounded-md default-bg">
                         {themes.map((theme, themeIdx) => (
                             <Listbox.Option
                                 key={themeIdx}
@@ -51,9 +51,7 @@ const List = () => {
                                     <>
                                         <button
                                             className={`block truncate ${
-                                                selected
-                                                    ? 'font-bold'
-                                                    : 'font-normal'
+                                                selected ? '' : ''
                                             }`}
                                         >
                                             {theme.option
