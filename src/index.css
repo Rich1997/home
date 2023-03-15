@@ -96,3 +96,12 @@ body {
 .b-t {
     @apply border-t tablet:border-t-0 dark:border-secondary-dark border-secondary-light;
 }
+
+/* default gradient */
+.d-g {
+    @apply dark:text-primary-dark text-primary-light;
+}
+
+.s {
+    -webkit-text-stroke: 5px transparent;
+}

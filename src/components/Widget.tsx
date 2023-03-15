@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
+import Icon0 from '../assets/icons/Icon0';
 
 type ClockProps = {
     is24HourFormat?: boolean;
     showSeconds?: boolean;
     align?: 'center' | 'start' | 'end';
+    isMeridiemItalic?: boolean;
 };
 
 const Widget = ({
     is24HourFormat = false,
     showSeconds = true,
     align = 'center',
+    isMeridiemItalic = true,
 }: ClockProps) => {
     const [time, setTime] = useState(new Date());
     const [today, setToday] = useState('');
@@ -93,14 +96,16 @@ const Widget = ({
     return (
         <div className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align}`}>
             <div
-                className={`flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black`}
+                className={`pr-2 flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
             >
-                <div className="desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl text-2xl tracking-tighter">
+                <div
+                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl text-2xl tracking-tighter`}
+                >
                     {formatTime(time)}
                 </div>
                 <div
-                    className={`${
-                        is24HourFormat ? 'hidden' : 'block'
+                    className={`${is24HourFormat ? 'hidden' : 'block'} ${
+                        isMeridiemItalic ? 'italic' : ''
                     } desktop:text-6xl laptop:text-4xl tablet:text-3xl phone:text-lg text-base laptop:py-2 tablet:py-1 phone:py-0 py-2 tracking-tighter`}
                 >
                     {time.getHours() >= 12 ? 'PM' : 'AM'}
