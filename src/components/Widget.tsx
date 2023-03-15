@@ -96,7 +96,7 @@ const Widget = ({
     return (
         <div className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align}`}>
             <div
-                className={`pr-2 flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
+                className={`pr-2 flex items-end is-${align} desktop:gap-3 laptop:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
             >
                 <div
                     className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl text-2xl tracking-tighter`}
