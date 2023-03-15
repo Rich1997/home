@@ -89,6 +89,10 @@ body {
     @apply border dark:border-secondary-dark border-secondary-light;
 }
 
+.b-b {
+    @apply border-b dark:border-secondary-dark border-secondary-light;
+}
+
 .b-l {
     @apply tablet:border-l dark:border-secondary-dark border-secondary-light;
 }
