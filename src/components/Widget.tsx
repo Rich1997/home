@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Icon0 from '../assets/icons/Icon0';
 
 type ClockProps = {
     is24HourFormat?: boolean;

@@ -25,9 +25,9 @@ const List = () => {
                     </span>
                 </Listbox.Button>
                 <Transition
-                    leave="transition ease-in duration-100"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
                 >
                     <Listbox.Options className="z-30 p-2 absolute w-full decoration-none b mt-1 overflow-auto rounded-md default-bg">
                         {themes.map((theme, themeIdx) => (
