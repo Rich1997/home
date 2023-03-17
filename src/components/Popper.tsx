@@ -28,7 +28,7 @@ const Popper = () => {
                         </div>
                         <div className="px-6 flex flex-col gap-2 items-start cursor-default d-s-t h4">
                             <div>Theme</div>
-                            <List />
+
                             <ThemeSwitch />
                         </div>
                         <div className="px-6 flex flex-col gap-2 items-start cursor-default">

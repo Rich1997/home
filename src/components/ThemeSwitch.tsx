@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Switch } from '@headlessui/react';
 import MoonIcon from '../assets/icons/MoonIcon';
-import { useTheme } from '../context/ThemeContext';
+import { Theme, useTheme } from '../context/ThemeContext';
 
 const ThemeSwitch = () => {
     const { theme, setTheme } = useTheme();
-    const [enabled, setEnabled] = useState(false);
+    const localTheme = localStorage.getItem('homeTheme');
+    const [enabled, setEnabled] = useState(
+        localTheme ? (localTheme === Theme.dark ? false : true) : true
+    );
+
+    useEffect(() => {
+        setTheme(enabled ? Theme.light : Theme.dark);
+    }, [enabled]);
+
+    useEffect(() => localStorage.setItem('homeTheme', theme), [theme]);
 
     return (
         <div className="flex items-center gap-2">
-            <MoonIcon size={16} fill={true} />
+            <MoonIcon size={16} fill={enabled ? false : true} />
             <Switch
                 checked={enabled}
                 onChange={setEnabled}
