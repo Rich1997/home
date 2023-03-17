@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SettingsIcon from '../assets/icons/SettingsIcon';
 import List from './List';
+import ThemeSwitch from './ThemeSwitch';
 
 const Popper = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +12,12 @@ const Popper = () => {
                 className={`z-50 fixed top-8 right-6 rounded-full font-medium hover:text-opacity-100 focus:outline-0`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="flex items-center justify-center h-7 w-7 rounded-full default-bg dark:text-secondary-dark text-secondary-light d-h hover:animate-spin-soft">
+                <div className="flex items-center justify-center h-7 w-7 rounded-full default-bg dark:text-secondary-dark text-secondary-light d-t-h hover:animate-spin-soft">
                     <SettingsIcon size={24} />
                 </div>
             </button>
             <div
-                className={`b-t b-l -z-1 tablet:w-72 w-full tablet:overflow-hidden overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 ${
+                className={`-z-1 tablet:w-72 w-full tablet:overflow-hidden overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 b-t b-l ${
                     isOpen ? 'fixed' : 'hidden'
                 }`}
             >
@@ -28,6 +29,7 @@ const Popper = () => {
                         <div className="px-6 flex flex-col gap-2 items-start cursor-default d-s-t h4">
                             <div>Theme</div>
                             <List />
+                            <ThemeSwitch />
                         </div>
                         <div className="px-6 flex flex-col gap-2 items-start cursor-default">
                             <div>Font</div>

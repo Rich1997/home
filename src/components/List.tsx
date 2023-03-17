@@ -18,7 +18,7 @@ const List = () => {
     return (
         <Listbox value={selected} onChange={setSelected}>
             <div className="relative w-full">
-                <Listbox.Button className="relative flex items-center justify-between gap-2 w-full cursor-pointer rounded-md b py-1 px-3 text-left d-h">
+                <Listbox.Button className="relative flex items-center justify-between gap-2 w-full cursor-pointer rounded-md b py-1 px-3 text-left d-t-h">
                     <span className="truncate">{selected.option}</span>
                     <span className="pointer-events-none pt-0.5">
                         <ExpandIcon size={6} />
@@ -36,7 +36,7 @@ const List = () => {
                                 className={({ active, selected }) =>
                                     `relative cursor-pointer select-none py-1 px-2 rounded ${
                                         active
-                                            ? 'd-h dark:bg-surface-dark bg-surface-light'
+                                            ? 'd-t-h dark:bg-surface-dark bg-surface-light'
                                             : ''
                                     }
                                     ${selected ? 'default-text' : ''}`
@@ -48,17 +48,15 @@ const List = () => {
                                     );
                                 }}
                             >
-                                {({ selected }) => (
-                                    <>
-                                        <div
-                                            className={`flex gap-2 items-center truncate`}
-                                        >
-                                            {theme.option
-                                                .charAt(0)
-                                                .toLocaleUpperCase() +
-                                                theme.option.slice(1)}
-                                        </div>
-                                    </>
+                                {() => (
+                                    <div
+                                        className={`flex gap-2 items-center truncate`}
+                                    >
+                                        {theme.option
+                                            .charAt(0)
+                                            .toLocaleUpperCase() +
+                                            theme.option.slice(1)}
+                                    </div>
                                 )}
                             </Listbox.Option>
                         ))}

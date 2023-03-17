@@ -49,12 +49,20 @@ body {
     @apply dark:bg-primary-dark bg-primary-light;
 }
 
+.d-s-bg {
+    @apply dark:bg-secondary-dark bg-secondary-light;
+}
+
+.d-bg-h {
+    @apply dark:hover:bg-primary-light hover:bg-primary-dark;
+}
+
 .default-text {
     @apply dark:text-primary-light text-primary-dark;
 }
 
 /* default-hover */
-.d-h {
+.d-t-h {
     @apply dark:hover:text-primary-light hover:text-primary-dark;
 }
 
@@ -86,6 +94,11 @@ body {
 
 .b {
     @apply border dark:border-tertiary-dark border-tertiary-light;
+}
+
+/* border hover */
+.b-h {
+    @apply border dark:hover:border-primary-light hover:border-primary-dark;
 }
 
 .b-b {
