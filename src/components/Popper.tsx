@@ -11,7 +11,7 @@ const Popper = () => {
                 className={`z-50 fixed top-8 right-6 rounded-full font-medium hover:text-opacity-100 focus:outline-0`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="flex items-center justify-center h-7 w-7 rounded-full default-bg b dark:text-tertiary-dark text-tertiary-light d-h hover:animate-spin-soft">
+                <div className="flex items-center justify-center h-7 w-7 rounded-full default-bg dark:text-secondary-dark text-secondary-light d-h hover:animate-spin-soft">
                     <SettingsIcon size={24} />
                 </div>
             </button>
@@ -25,7 +25,7 @@ const Popper = () => {
                         <div className="px-6 pb-6 font-bold text-lg default-text b-b">
                             Settings
                         </div>
-                        <div className="px-6 flex flex-col gap-2 items-start cursor-default">
+                        <div className="px-6 flex flex-col gap-2 items-start cursor-default d-s-t h4">
                             <div>Theme</div>
                             <List />
                         </div>

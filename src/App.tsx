@@ -1,5 +1,4 @@
 import Popper from './components/Popper';
-import Settings from './components/Settings';
 import Widget from './components/Widget';
 import { useTheme } from './context/ThemeContext';
 

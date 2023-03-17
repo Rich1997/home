@@ -33,12 +33,13 @@ const List = () => {
                         {themes.map((theme, themeIdx) => (
                             <Listbox.Option
                                 key={themeIdx}
-                                className={({ active }) =>
-                                    `relative cursor-pointer select-none py-1 px-2 ${
+                                className={({ active, selected }) =>
+                                    `relative cursor-pointer select-none py-1 px-2 rounded ${
                                         active
-                                            ? 'd-h dark:bg-surface-dark bg-surface-light rounded'
+                                            ? 'd-h dark:bg-surface-dark bg-surface-light'
                                             : ''
-                                    }`
+                                    }
+                                    ${selected ? 'default-text' : ''}`
                                 }
                                 value={theme}
                                 onClick={() => {
@@ -49,16 +50,14 @@ const List = () => {
                             >
                                 {({ selected }) => (
                                     <>
-                                        <button
-                                            className={`block truncate ${
-                                                selected ? '' : ''
-                                            }`}
+                                        <div
+                                            className={`flex gap-2 items-center truncate`}
                                         >
                                             {theme.option
                                                 .charAt(0)
                                                 .toLocaleUpperCase() +
                                                 theme.option.slice(1)}
-                                        </button>
+                                        </div>
                                     </>
                                 )}
                             </Listbox.Option>

@@ -24,16 +24,15 @@
     -moz-osx-font-smoothing: grayscale;
 
     /* Base colors */
-    --primary-light: #f0f0f0;
-    --primary-dark: #101010;
-    --secondary-light: #dbdbdb;
-    --secondary-dark: #313131;
-    --tertiary-light: #8b8b8b;
-    --tertiary-dark: #6e6e6e;
+    --primary-light: #f5f5f5;
+    --primary-dark: #161616;
+    --secondary-light: #6b6b6b;
+    --secondary-dark: #6b6b6b;
+    --tertiary-light: #c6c6c6;
+    --tertiary-dark: #393939;
     --surface-light: #e4e4e7;
     --surface-dark: #27272a;
-    --primary-accent-light: #ffdc7d;
-    --primary-accent-dark: #624f1b;
+    --primary-accent: #ef743c;
 }
 
 html,
@@ -59,14 +58,14 @@ body {
     @apply dark:hover:text-primary-light hover:text-primary-dark;
 }
 
-/* default-tertiary-text */
-.d-t-t {
-    @apply dark:text-tertiary-dark text-tertiary-light;
-}
-
 /* default-secondary-text */
 .d-s-t {
     @apply dark:text-secondary-dark text-secondary-light;
+}
+
+/* default-tertiary-text */
+.d-t-t {
+    @apply dark:text-tertiary-dark text-tertiary-light;
 }
 
 .is-center {
@@ -86,19 +85,19 @@ body {
 }
 
 .b {
-    @apply border dark:border-secondary-dark border-secondary-light;
+    @apply border dark:border-tertiary-dark border-tertiary-light;
 }
 
 .b-b {
-    @apply border-b dark:border-secondary-dark border-secondary-light;
+    @apply border-b dark:border-tertiary-dark border-tertiary-light;
 }
 
 .b-l {
-    @apply tablet:border-l dark:border-secondary-dark border-secondary-light;
+    @apply tablet:border-l dark:border-tertiary-dark border-tertiary-light;
 }
 
 .b-t {
-    @apply border-t tablet:border-t-0 dark:border-secondary-dark border-secondary-light;
+    @apply border-t tablet:border-t-0 dark:border-tertiary-dark border-tertiary-light;
 }
 
 /* default gradient */
@@ -108,4 +107,12 @@ body {
 
 .s {
     -webkit-text-stroke: 7.5px transparent;
+}
+
+.h5 {
+    @apply text-xs;
+}
+
+.h4 {
+    @apply text-sm;
 }

@@ -17,8 +17,7 @@ module.exports = {
                 'surface-light': 'var(--surface-light)',
                 'surface-dark': 'var(--surface-dark)',
 
-                'primary-accent-light': 'var(--primary-accent-light)',
-                'primary-accent-dark': 'var(--primary-accent-dark)',
+                'primary-accent': 'var(--primary-accent)',
             },
         },
         screens: {

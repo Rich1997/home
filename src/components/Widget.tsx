@@ -98,7 +98,7 @@ const Widget = ({
                 className={`pr-2 flex items-end is-${align} desktop:gap-3 laptop:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
             >
                 <div
-                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl text-2xl tracking-tighter`}
+                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl laptop:ml-0 ml-1 text-2xl tracking-tighter`}
                 >
                     {formatTime(time)}
                 </div>
