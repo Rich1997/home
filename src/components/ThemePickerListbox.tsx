@@ -1,10 +1,10 @@
 import { Listbox, Transition } from '@headlessui/react';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import ExpandIcon from '../assets/icons/ExpandIcon';
 import { Theme, useTheme } from '../context/ThemeContext';
 import { themes } from '../utils/constants';
 
-const List = () => {
+const ThemePickerListbox = () => {
     const { theme, setTheme } = useTheme();
     const op = localStorage.getItem('homeTheme');
     const [selected, setSelected] = useState(
@@ -18,27 +18,29 @@ const List = () => {
     return (
         <Listbox value={selected} onChange={setSelected}>
             <div className="relative w-full">
-                <Listbox.Button className="relative flex items-center justify-between gap-2 w-full cursor-pointer rounded-md b py-1 px-3 text-left d-h">
+                <Listbox.Button className="z-10 relative flex items-center justify-between gap-2 w-full cursor-pointer rounded-md b py-1 px-3 text-left default-bg d-t-h">
                     <span className="truncate">{selected.option}</span>
                     <span className="pointer-events-none pt-0.5">
                         <ExpandIcon size={6} />
                     </span>
                 </Listbox.Button>
                 <Transition
-                    leave="transition ease-in duration-100"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
                 >
-                    <Listbox.Options className="z-30 px-1 absolute w-[163px] b mt-1 overflow-auto rounded-md py-2 default-bg">
+                    <Listbox.Options className="z-50 p-2 absolute w-full decoration-none b mt-1 overflow-auto rounded-md default-bg">
                         {themes.map((theme, themeIdx) => (
                             <Listbox.Option
                                 key={themeIdx}
-                                className={({ active }) =>
-                                    `relative cursor-pointer select-none py-1 px-2 ${
+                                className={({ active, selected }) =>
+                                    `relative cursor-pointer select-none py-1 px-2 rounded ${
                                         active
-                                            ? 'd-h dark:bg-surface-dark bg-surface-light rounded'
+                                            ? 'd-t-h dark:bg-surface-dark bg-surface-light'
                                             : ''
-                                    }`
+                                    }
+                                    ${selected ? 'default-text' : ''}`
                                 }
                                 value={theme}
                                 onClick={() => {
@@ -47,21 +49,15 @@ const List = () => {
                                     );
                                 }}
                             >
-                                {({ selected }) => (
-                                    <>
-                                        <button
-                                            className={`block truncate ${
-                                                selected
-                                                    ? 'font-bold'
-                                                    : 'font-normal'
-                                            }`}
-                                        >
-                                            {theme.option
-                                                .charAt(0)
-                                                .toLocaleUpperCase() +
-                                                theme.option.slice(1)}
-                                        </button>
-                                    </>
+                                {() => (
+                                    <div
+                                        className={`flex gap-2 items-center truncate`}
+                                    >
+                                        {theme.option
+                                            .charAt(0)
+                                            .toLocaleUpperCase() +
+                                            theme.option.slice(1)}
+                                    </div>
                                 )}
                             </Listbox.Option>
                         ))}
@@ -72,4 +68,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default ThemePickerListbox;

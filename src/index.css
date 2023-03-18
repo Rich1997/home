@@ -24,14 +24,15 @@
     -moz-osx-font-smoothing: grayscale;
 
     /* Base colors */
-    --primary-light: #f0f0f0;
-    --primary-dark: #101010;
-    --secondary-light: #dbdbdb;
-    --secondary-dark: #313131;
-    --tertiary-light: #8b8b8b;
-    --tertiary-dark: #6e6e6e;
+    --primary-light: #f5f5f5;
+    --primary-dark: #161616;
+    --secondary-light: #6b6b6b;
+    --secondary-dark: #6b6b6b;
+    --tertiary-light: #c6c6c6;
+    --tertiary-dark: #393939;
     --surface-light: #e4e4e7;
     --surface-dark: #27272a;
+    --primary-accent: #ef743c;
 }
 
 html,
@@ -48,13 +49,26 @@ body {
     @apply dark:bg-primary-dark bg-primary-light;
 }
 
+.d-s-bg {
+    @apply dark:bg-secondary-dark bg-secondary-light;
+}
+
+.d-bg-h {
+    @apply dark:hover:bg-primary-light hover:bg-primary-dark;
+}
+
 .default-text {
     @apply dark:text-primary-light text-primary-dark;
 }
 
 /* default-hover */
-.d-h {
+.d-t-h {
     @apply dark:hover:text-primary-light hover:text-primary-dark;
+}
+
+/* default-secondary-text */
+.d-s-t {
+    @apply dark:text-secondary-dark text-secondary-light;
 }
 
 /* default-tertiary-text */
@@ -79,5 +93,51 @@ body {
 }
 
 .b {
-    @apply border dark:border-secondary-dark border-secondary-light;
+    @apply border dark:border-tertiary-dark border-tertiary-light;
+}
+
+/* border hover */
+.b-h {
+    @apply border dark:hover:border-primary-light hover:border-primary-dark;
+}
+
+.b-b {
+    @apply border-b dark:border-tertiary-dark border-tertiary-light;
+}
+
+.b-l {
+    @apply tablet:border-l dark:border-tertiary-dark border-tertiary-light;
+}
+
+.b-t {
+    @apply border-t tablet:border-t-0 dark:border-tertiary-dark border-tertiary-light;
+}
+
+/* default gradient */
+.d-g {
+    @apply dark:text-primary-dark text-primary-light;
+}
+
+.s {
+    -webkit-text-stroke: 7.5px transparent;
+}
+
+.h5 {
+    @apply text-xs;
+}
+
+.h4 {
+    @apply text-sm;
+}
+
+.h3 {
+    @apply text-base;
+}
+
+.h2 {
+    @apply text-lg;
+}
+
+.h1 {
+    @apply text-xl;
 }

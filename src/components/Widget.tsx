@@ -4,12 +4,14 @@ type ClockProps = {
     is24HourFormat?: boolean;
     showSeconds?: boolean;
     align?: 'center' | 'start' | 'end';
+    isMeridiemItalic?: boolean;
 };
 
 const Widget = ({
     is24HourFormat = false,
     showSeconds = true,
     align = 'center',
+    isMeridiemItalic = true,
 }: ClockProps) => {
     const [time, setTime] = useState(new Date());
     const [today, setToday] = useState('');
@@ -91,16 +93,18 @@ const Widget = ({
     };
 
     return (
-        <div className={`p-4 flex flex-col is-y-${align}`}>
+        <div className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align}`}>
             <div
-                className={`flex items-end is-${align} laptop:gap-4 tablet:gap-2 gap-1 font-black`}
+                className={`pr-2 flex items-end is-${align} desktop:gap-3 laptop:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
             >
-                <div className="desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl text-2xl tracking-tighter">
+                <div
+                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl laptop:ml-0 ml-1 text-2xl tracking-tighter`}
+                >
                     {formatTime(time)}
                 </div>
                 <div
-                    className={`${
-                        is24HourFormat ? 'hidden' : 'block'
+                    className={`${is24HourFormat ? 'hidden' : 'block'} ${
+                        isMeridiemItalic ? 'italic' : ''
                     } desktop:text-6xl laptop:text-4xl tablet:text-3xl phone:text-lg text-base laptop:py-2 tablet:py-1 phone:py-0 py-2 tracking-tighter`}
                 >
                     {time.getHours() >= 12 ? 'PM' : 'AM'}
@@ -109,9 +113,13 @@ const Widget = ({
             <div className="tracking-tighter font-black desktop:text-3xl laptop:text-2xl tablet:text-xl phone:text-lg">
                 {today}
             </div>
-            <div className="desktop:text-base tablet:text-sm text-xs">
-                Day of the year is {dayOfYear} | {daysLeft}{' '}
-                {daysLeft == 1 ? 'day' : 'days'} left in the year
+            <div
+                className={`flex flex-col desktop:text-base tablet:text-sm text-xs items-${align}`}
+            >
+                <div>Day of the year is {dayOfYear}</div>
+                <div>
+                    {daysLeft} {daysLeft == 1 ? 'day' : 'days'} left in the year
+                </div>
             </div>
         </div>
     );

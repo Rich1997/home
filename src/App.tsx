@@ -1,4 +1,4 @@
-import Settings from './components/Settings';
+import SettingsPanel from './components/SettingsPanel';
 import Widget from './components/Widget';
 import { useTheme } from './context/ThemeContext';
 
@@ -6,13 +6,13 @@ function App() {
     const { theme } = useTheme();
     return (
         <div className={`${theme}`}>
-            <div className="default-bg default-text w-full min-h-screen h-full">
-                <Settings />
+            <div className="flex default-bg default-text w-full min-h-screen h-screen">
                 <Widget
                     is24HourFormat={false}
                     showSeconds={true}
-                    align="center"
+                    align="start"
                 />
+                <SettingsPanel />
             </div>
         </div>
     );
