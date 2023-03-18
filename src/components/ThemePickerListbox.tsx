@@ -30,7 +30,7 @@ const ThemePickerListbox = () => {
                     enterFrom="transform opacity-0 scale-95"
                     enterTo="transform opacity-100 scale-100"
                 >
-                    <Listbox.Options className="z-50 p-2 absolute w-full decoration-none b mt-1 overflow-auto rounded-md default-bg">
+                    <Listbox.Options className="z-50 p-1 absolute w-full decoration-none b mt-1 overflow-auto rounded-md default-bg">
                         {themes.map((theme, themeIdx) => (
                             <Listbox.Option
                                 key={themeIdx}
