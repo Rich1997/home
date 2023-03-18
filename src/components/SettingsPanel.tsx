@@ -22,7 +22,7 @@ const SettingsPanel = () => {
             >
                 <div className="flex flex-col justify-between h-full gap-8">
                     <div className="pt-8 select-none">
-                        <div className="px-6 pb-6 font-bold text-lg default-text b-b">
+                        <div className="px-6 pb-6 font-semibold text-lg tablet:text-xl default-text b-b">
                             Settings
                         </div>
                         <div className="flex flex-col gap-4">
