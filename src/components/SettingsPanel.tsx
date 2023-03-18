@@ -16,7 +16,7 @@ const SettingsPanel = () => {
                 </div>
             </button>
             <div
-                className={`-z-1 tablet:w-72 w-full tablet:overflow-hidden overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 b-t b-l ${
+                className={`-z-1 tablet:w-72 w-full overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 b-t b-l ${
                     isOpen ? 'fixed' : 'hidden'
                 }`}
             >
