@@ -1,4 +1,4 @@
-import Popper from './components/Popper';
+import SettingsPanel from './components/SettingsPanel';
 import Widget from './components/Widget';
 import { useTheme } from './context/ThemeContext';
 
@@ -12,7 +12,7 @@ function App() {
                     showSeconds={true}
                     align="start"
                 />
-                <Popper />
+                <SettingsPanel />
             </div>
         </div>
     );

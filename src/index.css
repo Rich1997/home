@@ -129,3 +129,15 @@ body {
 .h4 {
     @apply text-sm;
 }
+
+.h3 {
+    @apply text-base;
+}
+
+.h2 {
+    @apply text-lg;
+}
+
+.h1 {
+    @apply text-xl;
+}

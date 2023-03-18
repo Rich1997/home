@@ -4,7 +4,7 @@ import ExpandIcon from '../assets/icons/ExpandIcon';
 import { Theme, useTheme } from '../context/ThemeContext';
 import { themes } from '../utils/constants';
 
-const List = () => {
+const ThemePickerListbox = () => {
     const { theme, setTheme } = useTheme();
     const op = localStorage.getItem('homeTheme');
     const [selected, setSelected] = useState(
@@ -67,4 +67,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default ThemePickerListbox;

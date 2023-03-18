@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import SettingsIcon from '../assets/icons/SettingsIcon';
-import List from './List';
-import ThemeSwitch from './ThemeSwitch';
+import ThemePickerListbox from './ThemePickerListbox';
 
-const Popper = () => {
+const SettingsPanel = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -21,21 +20,43 @@ const Popper = () => {
                     isOpen ? 'fixed' : 'hidden'
                 }`}
             >
-                <div className="flex flex-col justify-between h-full">
-                    <div className="pt-8 flex flex-col gap-4 ">
+                <div className="flex flex-col justify-between h-full gap-8">
+                    <div className="pt-8 select-none">
                         <div className="px-6 pb-6 font-bold text-lg default-text b-b">
                             Settings
                         </div>
-                        <div className="px-6 flex flex-col gap-2 items-start cursor-default d-s-t h4">
-                            <div>Theme</div>
-
-                            <ThemeSwitch />
+                        <div className="flex flex-col gap-4">
+                            <div className="px-6 pt-6 font-semibold default-text h4">
+                                General
+                            </div>
+                            <div className="grid grid-cols-5 px-6 gap-3">
+                                <div className="col-span-2 flex flex-col gap-2 items-start cursor-default d-s-t h5">
+                                    <div>Theme</div>
+                                    <ThemePickerListbox />
+                                </div>
+                                <div className="col-span-3 flex flex-col gap-2 items-start cursor-default d-s-t h5">
+                                    <div>Font</div>
+                                    <ThemePickerListbox />
+                                </div>
+                            </div>
                         </div>
-                        <div className="px-6 flex flex-col gap-2 items-start cursor-default">
-                            <div>Font</div>
+                        <div className="flex flex-col gap-4">
+                            <div className="px-6 pt-6 font-semibold default-text h4">
+                                Widget
+                            </div>
+                            <div className="grid grid-cols-5 px-6 gap-3">
+                                <div className="col-span-2 flex flex-col gap-2 items-start cursor-default d-s-t h5">
+                                    <div>Theme</div>
+                                    <ThemePickerListbox />
+                                </div>
+                                <div className="col-span-3 flex flex-col gap-2 items-start cursor-default d-s-t h5">
+                                    <div>Font</div>
+                                    <ThemePickerListbox />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="p-6 default-text dark:bg-surface-dark bg-surface-light">
+                    <div className="p-6 default-text dark:bg-surface-dark bg-surface-light h4">
                         <span className="flex justify-between items-center gap-4">
                             <span>home version 2.0</span>
                             <div className="flex gap-4">
@@ -60,4 +81,4 @@ const Popper = () => {
     );
 };
 
-export default Popper;
+export default SettingsPanel;
