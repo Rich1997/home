@@ -94,19 +94,19 @@ const Widget = ({
 
     return (
         <div
-            className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align} font-newake`}
+            className={`laptop:p-16 p-8 pt-16 flex flex-col is-y-${align} font-roboto_flex`}
         >
             <div
                 className={`pr-2 flex items-end is-${align} desktop:gap-3 laptop:gap-2 gap-1 font-black d-g s text-transparent bg-clip-text ${'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'}`}
             >
                 <div
-                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl laptop:ml-0 ml-1 text-2xl tracking-tighter`}
+                    className={`desktop:text-9xl laptop:text-8xl tablet:text-7xl phone:text-4xl ml-1 text-2xl tracking-tighter`}
                 >
                     {formatTime(time)}
                 </div>
                 <div
                     className={`${is24HourFormat ? 'hidden' : 'block'} ${
-                        isMeridiemItalic ? 'italic' : ''
+                        isMeridiemItalic ? 'italic ital' : ''
                     } desktop:text-6xl laptop:text-4xl tablet:text-3xl phone:text-lg text-base laptop:py-2 tablet:py-1 phone:py-0 py-2 tracking-tighter`}
                 >
                     {time.getHours() >= 12 ? 'PM' : 'AM'}

@@ -7,11 +7,7 @@ function App() {
     return (
         <div className={`${theme}`}>
             <div className="flex default-bg default-text w-full min-h-screen h-screen">
-                <Widget
-                    is24HourFormat={false}
-                    showSeconds={true}
-                    align="start"
-                />
+                <Widget align="start" />
                 <SettingsPanel />
             </div>
         </div>

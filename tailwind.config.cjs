@@ -6,7 +6,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 inter: ['Inter var', 'sans-serif'],
-                newake: ['Newake', 'sans-serif'],
+                roboto_flex: ['Roboto flex', 'sans-serif'],
             },
             colors: {
                 'primary-light': 'var(--primary-light)',
