@@ -4,6 +4,10 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
+            fontFamily: {
+                inter: ['Inter var', 'sans-serif'],
+                newake: ['Newake', 'sans-serif'],
+            },
             colors: {
                 'primary-light': 'var(--primary-light)',
                 'primary-dark': 'var(--primary-dark)',
