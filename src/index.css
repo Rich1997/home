@@ -82,14 +82,6 @@ body {
     @apply justify-end;
 }
 
-.is-y-center {
-    @apply items-center;
-}
-
-.is-y-end {
-    @apply items-end;
-}
-
 .b {
     @apply border dark:border-tertiary-dark border-tertiary-light;
 }

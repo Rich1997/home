@@ -16,8 +16,8 @@ const SettingsPanel = () => {
                 </div>
             </button>
             <div
-                className={`-z-1 tablet:w-72 w-full overflow-auto default-bg tablet:h-full h-1/2 tablet:right-0 bottom-0 b-t b-l ${
-                    isOpen ? 'fixed' : 'hidden'
+                className={`-z-1 tablet:w-96 w-full overflow-auto default-bg h-full b-t b-l ${
+                    isOpen ? 'block' : 'hidden'
                 }`}
             >
                 <div className="flex flex-col justify-between h-full gap-8">
